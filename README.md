@@ -49,6 +49,38 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
 
     sudo docker-compose up -d
 
-    sudo docker ps 
+    sudo docker ps   # till here your outline container , postgress , redis should be running. 
 
-                
+## 4- Nginx and Reverse proxy installation on vm
+
+### Nginx installation
+
+    sudo apt update
+    sudo apt install nginx
+    sudo systemctl start nginx  
+
+
+### Reverse proxy 
+
+    sudo nano /etc/nginx/sites-available/docs_disearch.conf
+    
+    server {
+    listen 80;
+    server_name docs.disearch.ai;
+
+    location / {
+        proxy_pass http://docs.disearch.ai:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    }
+
+    sudo ln -s /etc/nginx/sites-available/docs_disearch.conf /etc/nginx/sites-enabled/
+
+    sudo nginx -t
+
+    sudo systemctl restart nginx
+
+            
