@@ -1,8 +1,16 @@
 # Outline-wiki-deployment-on-vm-with-nginx-reservse-proxy-and-SSL-certificate
 
-- First to all go to the slack page and do some configuration. and add information in you docker.env. so that your outline will successfully redirect to slack. steps are given below..
+## 1- GCP VM and domain mapping
 
-##Creat Environment File for Docker by adding Slack authentication configuration.
+-    Create a simple VM in gcp cloud 
+-    Attach static to the vm
+-    Allow port 80 , 443 , 22 , 3000 port from gcp firewall and attach tag under gcp vm network tag.
+-    Then go to cloud DNS under hosted zone and point domain to vm static ip. In my case my domain is docs.disearch.ai
+-    then ssh the vm and upload docker-compose.yaml and docker.env file to vm
+
+## 2- Now go to the slack page and do some configuration. and add information in you docker.env. so that your outline will successfully redirect to slack. steps are given below..
+
+### Creat Environment File for Docker by adding Slack authentication configuration.
 
 -   Sign in with your Slack account and visit ***https://api.slack.com/apps***
 -   then click on **create an app**
@@ -25,20 +33,22 @@
 -  then open the **Settings >> Install App** page from the left sidebar and click on the **Install** to WorkSpace button to install the App for your Slack workspace.
 
 
-## Now run below command to start docker compose.
+## 3- Now run below command to start docker compose.
 
 ### Create the database with the following command:
 
-  docker compose run --rm outline yarn db:create --env=production-ssl-disabled
+    sudo docker-compose run outline yarn db:create --env=production-ssl-disabled
 
 ### Migrate the new database to add needed tables, indexes, etc:
 
-  docker compose run --rm outline yarn db:migrate --env=production-ssl-disabled
+    sudo docker-compose run outline yarn db:migrate --env=production-ssl-disabled
 
 ### Running
 
 Make sure you are in the same directory as docker-compose.yml and start Outline:
 
-  docker compose up -d
+    sudo docker-compose up -d
+
+    sudo docker ps 
 
                 
