@@ -79,6 +79,9 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
 
     sudo ln -s /etc/nginx/sites-available/docs_disearch.conf /etc/nginx/sites-enabled/
 
+### Applyin SSL Certificate
+
+
     sudo nginx -t
 
     sudo systemctl restart nginx
