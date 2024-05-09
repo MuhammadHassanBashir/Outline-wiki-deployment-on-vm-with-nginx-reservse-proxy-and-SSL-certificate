@@ -27,9 +27,9 @@
 - then go to the **Basic Information** page from the left sidebar. Copy the values **Client ID and Client Secret, App ID and Verification Token values** from their boxes under **App Credentials**. and add this information to your **docker.env**
 - now click on **slash command** option from the left sidebar. and click on **create new command**.
     - Command: /outline
-    - Request URL: https://docs.disearch.ai/api/hooks.slack
+    - Request URL: **https://docs.disearch.ai/api/hooks.slack**
     - then enter description for the command and word hint and click on save to finish.
--  then open  the menu Features >> Interactivity and Shortcuts from the left sidebar. **Enable Interactivity by switching the toggle button** and paste **https://docs.disearch.ai/api/hooks.interactive** as the Request URL. Click the Save Changes button to finish.
+- then open  the menu Features >> Interactivity and Shortcuts from the left sidebar. **Enable Interactivity by switching the toggle button** and paste **https://docs.disearch.ai/api/hooks.interactive** as the Request URL. Click the Save Changes button to finish.
 -  then open the **Settings >> Install App** page from the left sidebar and click on the **Install** to WorkSpace button to install the App for your Slack workspace.
 
 
@@ -79,11 +79,21 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
 
     sudo ln -s /etc/nginx/sites-available/docs_disearch.conf /etc/nginx/sites-enabled/
 
-### Applyin SSL Certificate
-
-
-    sudo nginx -t
+     sudo nginx -t
 
     sudo systemctl restart nginx
 
-            
+
+### Applyin SSL Certificate
+
+    snap version
+    sudo apt policy snapd
+    sudo apt install snapd
+    sudo snap install core; sudo snap refresh core
+    sudo apt-get remove certbot
+    sudo snap install --classic certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    sudo certbot --version
+    sudo certbot --nginx  
+    
+    after this give your "email address" then enter "yes" and then enter "no" and select the domin by giving no which you want to add certificate.      after that check           domain on browser. you will get ssl certificate against your domian.
