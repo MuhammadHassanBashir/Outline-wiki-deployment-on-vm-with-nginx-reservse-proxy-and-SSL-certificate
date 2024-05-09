@@ -32,6 +32,12 @@
 - then open  the menu Features >> Interactivity and Shortcuts from the left sidebar. **Enable Interactivity by switching the toggle button** and paste **https://docs.disearch.ai/api/hooks.interactive** as the Request URL. Click the Save Changes button to finish.
 -  then open the **Settings >> Install App** page from the left sidebar and click on the **Install** to WorkSpace button to install the App for your Slack workspace.
 
+## 2.1 Or if you wants to continue authentication with google instead of slack. Then get the client id and client secret from google and add this in docker.env. 
+
+steps:
+
+-    go to google project > API&service > credentail > create credentail ... it will give you client id and client secret for google, add this in docker.env.
+-    also add change URL in docker.env "http to https".  
 
 ## 3- Now run below command to start docker compose.
 
@@ -46,6 +52,7 @@
 ### Running
 
 Make sure you are in the same directory as docker-compose.yml and start Outline:
+
 
     sudo docker-compose up -d
 
