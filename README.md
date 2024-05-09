@@ -1,4 +1,4 @@
-#Outline-wiki-deployment-on-vm-with-nginx-reservse-proxy-and-SSL-certificate
+# Outline-wiki-deployment-on-vm-with-nginx-reservse-proxy-and-SSL-certificate
 
 - First to all go to the slack page and do some configuration. and add information in you docker.env. so that your outline will successfully redirect to slack. steps are given below..
 
@@ -25,17 +25,17 @@
 -  then open the **Settings >> Install App** page from the left sidebar and click on the **Install** to WorkSpace button to install the App for your Slack workspace.
 
 
-##Now run below command to start docker compose.
+## Now run below command to start docker compose.
 
-###Create the database with the following command:
+### Create the database with the following command:
 
   docker compose run --rm outline yarn db:create --env=production-ssl-disabled
 
-###Migrate the new database to add needed tables, indexes, etc:
+### Migrate the new database to add needed tables, indexes, etc:
 
   docker compose run --rm outline yarn db:migrate --env=production-ssl-disabled
 
-###Running
+### Running
 
 Make sure you are in the same directory as docker-compose.yml and start Outline:
 
