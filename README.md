@@ -104,7 +104,7 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
 
 ### Point domain to the server where Nginx is running    
     
-    our domain is hosted in cloud dns... go to the cloud dns and point domain to vm where nginx is running..(add record section)
+    our domain is hosted in cloud dns... go to the cloud dns and point domain to vm where nginx is running..(add record section). "Then go to cloud DNS under hosted zone and point domain to vm static ip. In my case my domain is docs.disearch.ai"
     
     now use this to issue certificate.  
     sudo certbot --nginx  or sudo certbot --nginx -d <domain-name>
