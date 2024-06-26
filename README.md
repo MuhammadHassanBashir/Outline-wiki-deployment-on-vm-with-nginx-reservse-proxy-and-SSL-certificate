@@ -101,6 +101,12 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
     sudo snap install --classic certbot
     sudo ln -s /snap/bin/certbot /usr/bin/certbot
     sudo certbot --version
-    sudo certbot --nginx  
+
+### Point domain to the server where Nginx is running    
+    
+    our domain is hosted in cloud dns... go to the cloud dns and point domain to vm where nginx is running..(add record section)
+    
+    now use this to issue certificate.  
+    sudo certbot --nginx  or sudo certbot --nginx -d <domain-name>
     
     after this give your "email address" then enter "yes" and then enter "no" and select the domin by giving no which you want to add certificate.      after that check           domain on browser. you will get ssl certificate against your domian.
