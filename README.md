@@ -76,7 +76,7 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
     server_name docs.disearch.ai;
 
     location / {
-        proxy_pass http://docs.disearch.ai:3000;
+        proxy_pass http://localhost:3000;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
