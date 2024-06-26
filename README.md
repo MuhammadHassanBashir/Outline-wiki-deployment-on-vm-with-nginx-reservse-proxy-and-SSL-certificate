@@ -107,6 +107,6 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
     our domain is hosted in cloud dns... go to the cloud dns and point domain to vm where nginx is running..(add record section). "Then go to cloud DNS under hosted zone and point domain to vm static ip. In my case my domain is docs.disearch.ai"
     
     now use this to issue certificate.  
-    sudo certbot --nginx  or sudo certbot --nginx -d <domain-name>
+    sudo certbot --nginx  or sudo certbot --nginx -d <domain-name>    -->"it will call the letencrypt to for getting certificate. letencrypt go to the domain where it is hosted and from where to pointed vm against domain and update the .conf file and update ssl configurate on that file "
     
     after this give your "email address" then enter "yes" and then enter "no" and select the domin by giving no which you want to add certificate.      after that check           domain on browser. you will get ssl certificate against your domian.
