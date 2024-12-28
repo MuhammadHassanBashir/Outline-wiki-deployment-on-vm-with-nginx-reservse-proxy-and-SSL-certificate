@@ -97,6 +97,8 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
     sudo apt policy snapd
     sudo apt install snapd
     sudo snap install core; sudo snap refresh core
+    sudo systemctl start snap
+    sudo systemctl enable snap
     sudo apt-get remove certbot
     sudo snap install --classic certbot
     sudo ln -s /snap/bin/certbot /usr/bin/certbot
