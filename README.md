@@ -112,3 +112,7 @@ Make sure you are in the same directory as docker-compose.yml and start Outline:
     sudo certbot --nginx  or sudo certbot --nginx -d <domain-name>    -->"it will call the letencrypt to for getting certificate. letencrypt go to the domain where it is hosted and from where to pointed vm against domain and update the .conf file and update ssl configurate on that file "
     
     after this give your "email address" then enter "yes" and then enter "no" and select the domin by giving no which you want to add certificate.      after that check           domain on browser. you will get ssl certificate against your domian.
+
+
+-    nginx configuration path for ubuntu: /etc/nginx/sites-enabled/default
+-    nginx configuration path for linux: /etc/nginx/conf.d/default
